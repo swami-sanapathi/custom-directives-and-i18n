@@ -42,13 +42,16 @@ dependencies:
 devDependencies:
   '@angular-devkit/build-angular':
     specifier: ^18.0.0
-    version: 18.0.2(@angular/compiler-cli@18.0.1)(typescript@5.4.5)
+    version: 18.0.2(@angular/compiler-cli@18.0.1)(@angular/localize@18.0.1)(typescript@5.4.5)
   '@angular/cli':
     specifier: ^18.0.0
     version: 18.0.2
   '@angular/compiler-cli':
     specifier: ^18.0.0
     version: 18.0.1(@angular/compiler@18.0.1)(typescript@5.4.5)
+  '@angular/localize':
+    specifier: 18.0.1
+    version: 18.0.1(@angular/compiler-cli@18.0.1)(@angular/compiler@18.0.1)
   typescript:
     specifier: ~5.4.2
     version: 5.4.5
@@ -73,7 +76,7 @@ packages:
       - chokidar
     dev: true
 
-  /@angular-devkit/build-angular@18.0.2(@angular/compiler-cli@18.0.1)(typescript@5.4.5):
+  /@angular-devkit/build-angular@18.0.2(@angular/compiler-cli@18.0.1)(@angular/localize@18.0.1)(typescript@5.4.5):
     resolution: {integrity: sha512-cQkTx7XaIPj6+DXo6wZmO4iY0hOOfPDnSN/+m84XpBW0tuPGxH7Z9B6wV+Uwcpm9HGPqzRA7VZyPsqbK860b0Q==}
     engines: {node: ^18.19.1 || ^20.11.1 || >=22.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
@@ -118,8 +121,9 @@ packages:
       '@angular-devkit/architect': 0.1800.2
       '@angular-devkit/build-webpack': 0.1800.2(webpack-dev-server@5.0.4)(webpack@5.91.0)
       '@angular-devkit/core': 18.0.2
-      '@angular/build': 18.0.2(@angular/compiler-cli@18.0.1)(less@4.2.0)(postcss@8.4.38)(terser@5.31.0)(typescript@5.4.5)
+      '@angular/build': 18.0.2(@angular/compiler-cli@18.0.1)(@angular/localize@18.0.1)(less@4.2.0)(postcss@8.4.38)(terser@5.31.0)(typescript@5.4.5)
       '@angular/compiler-cli': 18.0.1(@angular/compiler@18.0.1)(typescript@5.4.5)
+      '@angular/localize': 18.0.1(@angular/compiler-cli@18.0.1)(@angular/compiler@18.0.1)
       '@babel/core': 7.24.5
       '@babel/generator': 7.24.5
       '@babel/helper-annotate-as-pure': 7.22.5
@@ -256,7 +260,7 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@angular/build@18.0.2(@angular/compiler-cli@18.0.1)(less@4.2.0)(postcss@8.4.38)(terser@5.31.0)(typescript@5.4.5):
+  /@angular/build@18.0.2(@angular/compiler-cli@18.0.1)(@angular/localize@18.0.1)(less@4.2.0)(postcss@8.4.38)(terser@5.31.0)(typescript@5.4.5):
     resolution: {integrity: sha512-iPPHdAJ3LiR8t/+39xjvrqMWcTmRrfphzKxXoIVDcswQjVQIk00EYuxinC6EVa7dSKDl1thk1MeCNZ9DIjaAvQ==}
     engines: {node: ^18.19.1 || ^20.11.1 || >=22.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
@@ -285,6 +289,7 @@ packages:
       '@ampproject/remapping': 2.3.0
       '@angular-devkit/architect': 0.1800.2
       '@angular/compiler-cli': 18.0.1(@angular/compiler@18.0.1)(typescript@5.4.5)
+      '@angular/localize': 18.0.1(@angular/compiler-cli@18.0.1)(@angular/compiler@18.0.1)
       '@babel/core': 7.24.5
       '@babel/helper-annotate-as-pure': 7.22.5
       '@babel/helper-split-export-declaration': 7.24.5
@@ -422,6 +427,24 @@ packages:
       tslib: 2.6.2
     dev: false
 
+  /@angular/localize@18.0.1(@angular/compiler-cli@18.0.1)(@angular/compiler@18.0.1):
+    resolution: {integrity: sha512-SaAe/GvI76hdI8XWFpkwPgXgQPafECJOFCOKM1N6TNNrjxfyDkA5jdd3cYJoMTkKPHSTETL1g6m7HIEZr/LIJg==}
+    engines: {node: ^18.13.0 || >=20.9.0}
+    hasBin: true
+    peerDependencies:
+      '@angular/compiler': 18.0.1
+      '@angular/compiler-cli': 18.0.1
+    dependencies:
+      '@angular/compiler': 18.0.1(@angular/core@18.0.1)
+      '@angular/compiler-cli': 18.0.1(@angular/compiler@18.0.1)(typescript@5.4.5)
+      '@babel/core': 7.24.4
+      '@types/babel__core': 7.20.5
+      fast-glob: 3.3.2
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@angular/platform-browser-dynamic@18.0.1(@angular/common@18.0.1)(@angular/compiler@18.0.1)(@angular/core@18.0.1)(@angular/platform-browser@18.0.1):
     resolution: {integrity: sha512-lzjq7HjigGxO5oh5Sw0Vxa3mAVidYHpHFQr46/OSl9T5jLpStcjEqK0xcfQz9bf2hV+0qFfMqmd2k0XQl7feqg==}
     engines: {node: ^18.13.0 || >=20.9.0}
@@ -513,7 +536,7 @@ packages:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@babel/code-frame': 7.24.6
-      '@babel/generator': 7.24.5
+      '@babel/generator': 7.24.6
       '@babel/helper-compilation-targets': 7.24.6
       '@babel/helper-module-transforms': 7.24.6(@babel/core@7.24.5)
       '@babel/helpers': 7.24.6
@@ -2683,6 +2706,35 @@ packages:
     dependencies:
       '@tufjs/canonical-json': 2.0.0
       minimatch: 9.0.4
+    dev: true
+
+  /@types/babel__core@7.20.5:
+    resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
+    dependencies:
+      '@babel/parser': 7.24.6
+      '@babel/types': 7.24.6
+      '@types/babel__generator': 7.6.8
+      '@types/babel__template': 7.4.4
+      '@types/babel__traverse': 7.20.6
+    dev: true
+
+  /@types/babel__generator@7.6.8:
+    resolution: {integrity: sha512-ASsj+tpEDsEiFr1arWrlN6V3mdfjRMZt6LtK/Vp/kreFLnr5QH5+DhvD5nINYZXzwJvXeGq+05iUXcAzVrqWtw==}
+    dependencies:
+      '@babel/types': 7.24.6
+    dev: true
+
+  /@types/babel__template@7.4.4:
+    resolution: {integrity: sha512-h/NUaSyG5EyxBIp8YRxo4RMe2/qQgvyowRwVMzhYhBCONbW8PUsg4lkFMrhgZhUe5z3L3MiLDuvyJ/CaPa2A8A==}
+    dependencies:
+      '@babel/parser': 7.24.6
+      '@babel/types': 7.24.6
+    dev: true
+
+  /@types/babel__traverse@7.20.6:
+    resolution: {integrity: sha512-r1bzfrm0tomOI8g1SzvCaQHo6Lcv6zu0EA+W2kHrt8dyrHQxGzBBL4kdkzIS+jBMV+EYcMAEAqXqYaLJq5rOZg==}
+    dependencies:
+      '@babel/types': 7.24.6
     dev: true
 
   /@types/body-parser@1.19.5:

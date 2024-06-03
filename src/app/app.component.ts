@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
+import { MultiSelectComponent } from "./shared/components/multi-select.component";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet],
   template: `
-    <h1>Welcome to {{title}}!</h1>
+    <h1 i18n>Welcome to {{ title }}!</h1>
 
-    <router-outlet />
+    <multi-select />
   `,
   styles: [],
+  imports: [RouterOutlet, MultiSelectComponent],
 })
 export class AppComponent {
-  title = 'component-directves';
+  title = $localize`"component-directves"`;
 }
