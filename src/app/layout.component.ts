@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
+import { WINDOW } from "../core/providers/document";
 
 @Component({
   selector: "layout",
@@ -29,9 +30,10 @@ import { Component } from "@angular/core";
   ],
 })
 export class LayoutComponent {
+  private readonly window = inject(WINDOW);
+
   changeLanguage(lang: string) {
-    // change the baseHref to the selected language using
     const baseHref = `/${lang}`;
-    window.location.assign(baseHref);
+    this.window!.location.assign(baseHref);
   }
 }
