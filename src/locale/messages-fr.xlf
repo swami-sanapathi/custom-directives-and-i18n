@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="1004495488546133256" datatype="html">
+        <source> You will see angular i18n example here </source>
+        <!-- french translation -->
+        <source>  Exemple d&#39;utilisation de angular i18n </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/i18n/article.component.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9177069584313735064" datatype="html">
+        <source> In this article you will learn how to use angular i18n to translate your application to multiple languages. and also how to use custom directives in angular. </source>
+        <source>  Dans cet article, vous apprendrez comment utiliser angular i18n pour traduire votre application vers plusieurs langues. et également comment utiliser des directives personnalisées dans angular. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/i18n/article.component.ts</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

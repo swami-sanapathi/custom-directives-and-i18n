@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "component-directves": {
+    "custom-directives-and-i18n": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -40,20 +40,23 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": "en",
+        "sourceLocale": "en-US",
         "locales": {
-          "fr": "src/locale/messages.fr.xlf"
+          "fr-FR": {
+            "baseHref": "fr-FR/",
+            "translation": "src/locale/messages-fr.xlf"
+          }
         }
       },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": ["en", "fr"],
-            "outputPath": "dist/component-directves",
+            "localize": ["en-US", "fr-FR"], 
+            "outputPath": "dist/custom-directives-and-i18n",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -92,16 +95,21 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "component-directves:build:production"
+              "buildTarget": "custom-directives-and-i18n:build:production"
             },
             "development": {
-              "buildTarget": "component-directves:build:development"
+              "buildTarget": "custom-directives-and-i18n:build:development"
             }
           },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "outputPath": "src/locale",
+            "format": "xlf",
+            "outFile": "messages-en.xlf"
+          }
         }
       }
     }

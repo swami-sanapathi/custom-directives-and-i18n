@@ -1,18 +1,17 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { MultiSelectComponent } from "./shared/components/multi-select.component";
+import { LayoutComponent } from "./layout.component";
 
 @Component({
   selector: "app-root",
   standalone: true,
   template: `
-    <h1 i18n>Welcome to {{ title }}!</h1>
-
-    <multi-select />
+    <h1>Welcome to {{ title }}!</h1>
+    <layout />
+    <router-outlet />
   `,
-  styles: [],
-  imports: [RouterOutlet, MultiSelectComponent],
+  imports: [RouterOutlet, LayoutComponent],
 })
 export class AppComponent {
-  title = $localize`"component-directves"`;
+  title = "i18n and custom directives demo";
 }
