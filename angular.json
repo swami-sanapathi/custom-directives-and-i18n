@@ -52,8 +52,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": ["en-US", "fr-FR"], 
-            "baseHref": "en-US/",
+            "localize": ["en-US", "fr-FR"],
             "outputPath": "dist/custom-directives-and-i18n",
             "index": "src/index.html",
             "browser": "src/main.ts",
