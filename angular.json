@@ -40,10 +40,6 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": {
-          "code": "en-US",
-          "baseHref": "en-US/"
-        },
         "locales": {
           "fr-FR": {
             "baseHref": "fr-FR/",
@@ -55,7 +51,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": ["en-US", "fr-FR"],
+            "localize": true,
             "outputPath": "dist/custom-directives-and-i18n",
             "index": "src/index.html",
             "browser": "src/main.ts",
