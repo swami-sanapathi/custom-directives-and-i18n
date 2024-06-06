@@ -37,8 +37,8 @@ export class LayoutComponent {
 
   changeLanguage(lang: string) {
     console.log(`Changing language to ${lang}`);
-    const baseHref = this.locale === "en-US" ? "/" : `/${lang}`;
+    const baseHref = this.locale === "en-US" ? "/" : `/${lang}/i18n`;
     // this.window!.location.assign(baseHref);
-    this.router.navigate([baseHref]);
+    this.router.navigateByUrl(baseHref);
   }
 }
