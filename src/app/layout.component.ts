@@ -28,7 +28,7 @@ import { Router } from "@angular/router";
         right: 10px;
       }
 
-      .a {
+      a {
         text-decoration: none;
       }
     `,
