@@ -9,8 +9,8 @@ import { Router } from "@angular/router";
     <div class="layout">
       <!-- add language toggle to the layout -->
       <div class="language-toggle">
-        <button (click)="changeLanguage('en-US')">English</button>
-        <button (click)="changeLanguage('fr-FR')">French</button>
+        <button><a href="en-US">English</a></button>
+        <button><a href="fr-FR"> French</a></button>
       </div>
     </div>
   `,
@@ -34,11 +34,4 @@ export class LayoutComponent {
   private readonly window = inject(WINDOW);
   private readonly locale = inject(LOCALE_ID);
   // private readonly router = inject(Router);
-
-  changeLanguage(lang: string) {
-    const baseHref = lang === "en-US" ? "/" : `/${this.locale}`;
-    console.log(`Changing language to ${baseHref}`);
-    this.window!.location.assign(baseHref);
-    // this.router.navigateByUrl();
-  }
 }
