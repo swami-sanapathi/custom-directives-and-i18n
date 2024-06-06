@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && mv -v dist/custom-directives-and-i18n/browser/en-US/* dist/custom-directives-and-i18n/browser && rm -rf dist/custom-directives-and-i18n/browser/en-US",
     "watch": "ng build --watch --configuration development"
   },
   "private": true,
