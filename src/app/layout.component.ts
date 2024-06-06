@@ -31,14 +31,14 @@ import { Router } from "@angular/router";
   ],
 })
 export class LayoutComponent {
-  // private readonly window = inject(WINDOW);
+  private readonly window = inject(WINDOW);
   private readonly locale = inject(LOCALE_ID);
-  private readonly router = inject(Router);
+  // private readonly router = inject(Router);
 
   changeLanguage(lang: string) {
-    console.log(`Changing language to ${lang}`);
     const baseHref = this.locale === "en-US" ? "/" : `/${lang}/i18n`;
-    // this.window!.location.assign(baseHref);
-    this.router.navigateByUrl(baseHref);
+    console.log(`Changing language to ${baseHref}`);
+    this.window!.location.assign(baseHref);
+    // this.router.navigateByUrl();
   }
 }
