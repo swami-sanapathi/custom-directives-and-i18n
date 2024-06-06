@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, LOCALE_ID, inject } from "@angular/core";
 import { WINDOW } from "../core/providers/document";
 
 @Component({
@@ -31,9 +31,10 @@ import { WINDOW } from "../core/providers/document";
 })
 export class LayoutComponent {
   private readonly window = inject(WINDOW);
+  private readonly locale = inject(LOCALE_ID);
 
   changeLanguage(lang: string) {
-    const baseHref = `/${lang}`;
+    const baseHref = this.locale === "en-US" ? "/" : `/${lang}`;
     this.window!.location.assign(baseHref);
   }
 }
