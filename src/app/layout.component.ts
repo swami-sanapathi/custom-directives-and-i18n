@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
     <div class="layout">
       <!-- add language toggle to the layout -->
       <div class="language-toggle">
-        <button><a href="en-US">English</a></button>
+        <button><a href="/">English</a></button>
         <button><a href="fr-FR"> French</a></button>
       </div>
     </div>
@@ -27,11 +27,11 @@ import { Router } from "@angular/router";
         top: 10px;
         right: 10px;
       }
+
+      .a {
+        text-decoration: none;
+      }
     `,
   ],
 })
-export class LayoutComponent {
-  private readonly window = inject(WINDOW);
-  private readonly locale = inject(LOCALE_ID);
-  // private readonly router = inject(Router);
-}
+export class LayoutComponent {}
