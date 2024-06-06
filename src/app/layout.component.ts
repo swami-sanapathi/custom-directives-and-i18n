@@ -36,7 +36,7 @@ export class LayoutComponent {
   // private readonly router = inject(Router);
 
   changeLanguage(lang: string) {
-    const baseHref = lang === "en-US" ? "/" : `/${lang}/i18n`;
+    const baseHref = lang === "en-US" ? "/" : `/${lang}`;
     console.log(`Changing language to ${baseHref}`);
     this.window!.location.assign(baseHref);
     // this.router.navigateByUrl();
