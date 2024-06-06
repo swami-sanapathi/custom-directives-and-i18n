@@ -40,6 +40,10 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
+        "sourceLocale": {
+          "code": "es",
+          "baseHref": "/"
+        },
         "locales": {
           "fr-FR": {
             "baseHref": "fr-FR/",
