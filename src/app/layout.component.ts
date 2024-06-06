@@ -1,5 +1,6 @@
 import { Component, LOCALE_ID, inject } from "@angular/core";
 import { WINDOW } from "../core/providers/document";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "layout",
@@ -30,11 +31,14 @@ import { WINDOW } from "../core/providers/document";
   ],
 })
 export class LayoutComponent {
-  private readonly window = inject(WINDOW);
+  // private readonly window = inject(WINDOW);
   private readonly locale = inject(LOCALE_ID);
+  private readonly router = inject(Router);
 
   changeLanguage(lang: string) {
+    console.log(`Changing language to ${lang}`);
     const baseHref = this.locale === "en-US" ? "/" : `/${lang}`;
-    this.window!.location.assign(baseHref);
+    // this.window!.location.assign(baseHref);
+    this.router.navigate([baseHref]);
   }
 }
